@@ -3,6 +3,7 @@ const currentPlayer = document.querySelector(".currentPlayer");
 let selected;
 let player = "X";
 
+//posições possiveis para ganhar o jogo 
 let positions = [
     [1, 2, 3],
     [4, 5, 6],
@@ -50,6 +51,7 @@ function check() {
         .filter((item) => item[0] === playerLastMove)
         .map((item) => item[1]);
     
+    //esse for vai pecorrer as posições que e possivel ter um ganhador 
     for (pos of positions) {
         if (pos.every((item) => items.includes(item - 1))) {
             alert("O JOGADOR '" + playerLastMove + "' GANHOU!");
